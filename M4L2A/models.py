@@ -22,6 +22,9 @@ class Room(models.Model):
     def __str__(self):
         return f"Кімната:{self.name}, ціна:{self.price}."
 
+    #class Meta():
+        #verbose_name =
+
 class Booking(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='bookings')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookings")
