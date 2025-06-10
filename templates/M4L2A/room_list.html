@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Наші кімнати</h2>
+
+    <ul class="list-group">
+        {% for room in room_list %}
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ room.name }}</h5>
+                <p class="card-text">{{room.description}}</p>
+                <a href="#" class="btn btn-outline-success">Забронювати</a>
+            </div>
+        </div>
+        {% empty %}
+            <li class="list-group-item"> Немає кімнат. </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
