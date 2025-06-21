@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="mb-4 text-center">Вхід</h2>
 
-<h2>Логін</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_div }}
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_div}}
+            <button type="submit" class="btn btn-success w-100 mt-3">Залогінитись</button>
+        </form>
 
-    <button type="submit" class="btn btn-success my-4  btn-lg">Залогіннитись</button>
-
-</form>
-
+        {% if form.errors %}
+            <div class="alert alert-danger mt-3">
+                <strong>Помилка входу:</strong> перевірте введені дані.
+            </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
