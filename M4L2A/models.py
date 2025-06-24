@@ -8,7 +8,7 @@ class TypeRoom(models.Model):
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return f"Тип кімнати:{self.name}"
+        return f"{self.name}"
 
 class Room(models.Model):
     type_room = models.ForeignKey(TypeRoom, on_delete=models.CASCADE, related_name="rooms")

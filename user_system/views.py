@@ -26,3 +26,8 @@ def login_page(request):
                 return redirect("main")
 
     return render(request, 'user_system/login.html', context={"form":form})
+
+def logout_page(request):
+    if request.user.is_authenticated:
+        logout(request)
+    return redirect('login')

@@ -2,7 +2,6 @@
 
 {% block content %}
 
-<!-- Hero-секція тільки для головної сторінки -->
 <div class="bg-info bg-opacity-25 text-dark text-center rounded-4 shadow-sm p-5 mb-5">
     <h1 class="display-4 fw-semibold text-primary">Вітаємо в Logistic Hotel</h1>
     <p class="fs-5 mt-3">Комфорт. Якість. Спокій. Ваш ідеальний відпочинок починається тут.</p>
@@ -20,7 +19,7 @@
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title">{{ room.name }}</h5>
                 <p class="card-text">{{ room.description }}</p>
-                <a href="#" class="btn btn-outline-success mt-auto">Забронювати</a>
+                <a href="{% url 'booking_page' room.id %}" class="btn btn-outline-success mt-auto">Забронювати</a>
             </div>
         </div>
     </div>

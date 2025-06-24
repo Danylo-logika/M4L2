@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Бронювання кімнати: {{ room.name }}</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            {% if room.picture %}
+                <img src="{{ room.picture.url }}" class="img-fluid rounded" alt="{{ room.name }}">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <p><strong>Опис:</strong> {{ room.description }}</p>
+            <p><strong>Класс:</strong> {{ room.type_room }}</p>
+            <p><strong>Місць:</strong> {{ room.places }}</p>
+            <p><strong>Кількість кімнат доступно:</strong> {{ room.rooms }}</p>
+            <p><strong>Ціна:</strong> {{ room.price }} грн / ніч</p>
+        </div>
+    </div>
+
+    <h4>Заповніть форму для бронювання</h4>
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        <div class="mb-3">
+            <label for="id_check_in" class="form-label">Дата заїзду</label>
+            {{ form.check_in.errors }}
+            {{ form.check_in }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_check_out" class="form-label">Дата виїзду</label>
+            {{ form.check_out.errors }}
+            {{ form.check_out }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_guests" class="form-label">Кількість гостей</label>
+            {{ form.guests.errors }}
+            {{ form.guests }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Забронювати</button>
+    </form>
+</div>
+{% endblock %}
