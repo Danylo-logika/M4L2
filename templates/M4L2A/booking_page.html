@@ -26,24 +26,35 @@
         {{ form.non_field_errors }}
 
         <div class="mb-3">
-            <label for="id_check_in" class="form-label">Дата заїзду</label>
-            {{ form.check_in.errors }}
-            {{ form.check_in }}
+            <label for="date_in" class="form-label">Дата заїзду</label>
+            {{ form.date_in.errors }}
+            {{ form.date_in }}
         </div>
 
         <div class="mb-3">
-            <label for="id_check_out" class="form-label">Дата виїзду</label>
-            {{ form.check_out.errors }}
-            {{ form.check_out }}
+            <label for="date_out" class="form-label">Дата виїзду</label>
+            {{ form.date_out.errors }}
+            {{ form.date_out }}
         </div>
 
         <div class="mb-3">
-            <label for="id_guests" class="form-label">Кількість гостей</label>
-            {{ form.guests.errors }}
-            {{ form.guests }}
+            <label for="phone" class="form-label">Номер телефону</label>
+            {{ form.phone.errors }}
+            {{ form.phone }}
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            {{ form.email.errors }}
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Ім'я</label>
+            {{ form.name.errors }}
+            {{ form.name }}
         </div>
 
         <button type="submit" class="btn btn-primary">Забронювати</button>
     </form>
 </div>
+
 {% endblock %}
